@@ -15,3 +15,7 @@ export const addResult = () => ({
 export const addClear = () => ({
   type: "clear",
 });
+
+export const addDelete = () => ({
+  type: "delete",
+});

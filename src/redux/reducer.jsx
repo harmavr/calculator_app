@@ -2,6 +2,7 @@ const initialState = {
   currentValue: "0",
   operator: "",
   previousValue: null,
+  disabled: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -40,6 +41,15 @@ const reducer = (state = initialState, action) => {
       currentValue: result,
       operator: "",
       previousValue: "0",
+    };
+  } else if (action.type === "delete") {
+    return {
+      ...state,
+      operator: null,
+      currentValue:
+        state.currentValue.length - 1 === 0
+          ? 0
+          : state.currentValue.slice(0, state.currentValue.length - 1),
     };
   } else if (action.type === "clear") {
     return {
