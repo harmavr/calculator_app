@@ -1,5 +1,5 @@
 const initialState = {
-  currentValue: 0,
+  currentValue: "0",
   operator: "",
   previousValue: null,
 };
@@ -9,7 +9,7 @@ const reducer = (state = initialState, action) => {
     return {
       ...state,
       currentValue:
-        state.currentValue === 0
+        state.currentValue === "0"
           ? action.payload
           : state.currentValue + action.payload,
     };
@@ -18,12 +18,12 @@ const reducer = (state = initialState, action) => {
       ...state,
       operator: action.payload,
       previousValue: state.currentValue,
-      currentValue: 0,
+      currentValue: "0",
     };
   } else if (action.type === "result") {
     let result;
-    const curValue = state.currentValue;
-    const prevValue = state.previousValue;
+    const curValue = parseFloat(state.currentValue);
+    const prevValue = parseFloat(state.previousValue);
     if (state.operator === "+") {
       result = prevValue + curValue;
     } else if (state.operator === "-") {
@@ -39,12 +39,12 @@ const reducer = (state = initialState, action) => {
       ...state,
       currentValue: result,
       operator: "",
-      previousValue: 0,
+      previousValue: "0",
     };
   } else if (action.type === "clear") {
     return {
       operator: null,
-      currentValue: 0,
+      currentValue: "0",
     };
   } else return state;
 };
