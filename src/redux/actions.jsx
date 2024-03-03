@@ -11,3 +11,7 @@ export const addOperator = (operator) => ({
 export const addResult = () => ({
   type: "result",
 });
+
+export const addClear = () => ({
+  type: "clear",
+});

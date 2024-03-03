@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import { addNumber, addOperator, addResult } from "../redux/actions";
+import { addClear, addNumber, addOperator, addResult } from "../redux/actions";
 
 const CalculatorGrid = () => {
   const currentValue = useSelector((state) => state.currentValue);
@@ -18,12 +18,16 @@ const CalculatorGrid = () => {
     dispatch(addResult());
   }
 
+  function handleClear() {
+    dispatch(addClear());
+  }
+
   return (
     <div className="calculator">
       <input type="text" value={currentValue} readOnly />
       <div className="buttons">
         <div className="row">
-          <button>CLEAR</button>
+          <button onClick={() => handleClear()}>CLEAR</button>
           <button>DEL</button>
           <button onClick={() => handleOperator("/")}>/</button>
         </div>
