@@ -9,7 +9,6 @@ import {
 } from "../redux/actions";
 
 const CalculatorGrid = () => {
-  const currentValue = useSelector((state) => state.currentValue);
   const dispatch = useDispatch();
 
   function handleNumber(number) {
@@ -34,7 +33,6 @@ const CalculatorGrid = () => {
 
   return (
     <div className="calculator">
-      <input type="text" value={currentValue} readOnly />
       <div className="buttons">
         <div className="row">
           <button onClick={() => handleClear()}>CLEAR</button>

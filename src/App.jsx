@@ -1,9 +1,10 @@
-import { useDispatch } from "react-redux";
 import CalculatorGrid from "./components/CalculatorGrid";
+import CurrentInput from "./components/CurrentInput";
 
 function App() {
   return (
     <>
+      <CurrentInput />
       <CalculatorGrid />
     </>
   );
