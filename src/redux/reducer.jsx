@@ -55,6 +55,7 @@ const reducer = (state = initialState, action) => {
     };
   } else if (action.type === "clear") {
     return {
+      ...state,
       operator: null,
       currentValue: "0",
     };
