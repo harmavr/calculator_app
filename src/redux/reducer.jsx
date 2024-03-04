@@ -2,7 +2,7 @@ const initialState = {
   currentValue: "0",
   operator: "",
   previousValue: null,
-  disabled: false,
+  calculations: "",
 };
 
 const reducer = (state = initialState, action) => {
@@ -36,11 +36,13 @@ const reducer = (state = initialState, action) => {
     } else {
       result = curValue;
     }
+    const prevCalculation = `${state.previousValue} ${state.operator} ${state.currentValue} = ${result}`;
     return {
       ...state,
-      currentValue: result,
+      currentValue: "0",
       operator: "",
       previousValue: "0",
+      calculations: prevCalculation,
     };
   } else if (action.type === "delete") {
     return {
