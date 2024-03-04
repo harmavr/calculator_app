@@ -59,6 +59,11 @@ const reducer = (state = initialState, action) => {
       operator: null,
       currentValue: "0",
     };
+  } else if (action.type === "comma") {
+    return {
+      ...state,
+      currentValue: state.currentValue + ".",
+    };
   } else return state;
 };
 

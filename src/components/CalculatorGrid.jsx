@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import {
   addClear,
+  addComma,
   addDelete,
   addNumber,
   addOperator,
@@ -31,6 +32,10 @@ const CalculatorGrid = () => {
     dispatch(addDelete());
   }
 
+  function handleComma() {
+    dispatch(addComma());
+  }
+
   return (
     <div className="calculator">
       <div className="buttons">
@@ -58,9 +63,9 @@ const CalculatorGrid = () => {
           <button onClick={() => handleOperator("-")}>-</button>
         </div>
         <div className="row">
-          <button>.</button>
+          <button onClick={() => handleComma()}>.</button>
           <button onClick={() => handleNumber("0")}>0</button>
-          <button onClick={() => handleResult("=")}>=</button>
+          <button onClick={() => handleResult()}>=</button>
         </div>
       </div>
     </div>

@@ -19,3 +19,7 @@ export const addClear = () => ({
 export const addDelete = () => ({
   type: "delete",
 });
+
+export const addComma = () => ({
+  type: "comma",
+});
