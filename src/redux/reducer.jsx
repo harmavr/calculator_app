@@ -50,7 +50,7 @@ const reducer = (state = initialState, action) => {
       operator: null,
       currentValue:
         state.currentValue.length - 1 === 0
-          ? 0
+          ? "0"
           : state.currentValue.slice(0, state.currentValue.length - 1),
     };
   } else if (action.type === "clear") {
